@@ -8,15 +8,15 @@ class LorenzAttractor{
   private float dt=0.01;
   private int size=1000;
   private float[] xyz = {1,1,1};
-  private LimitedQueueVector3 trajectory;
+  private LimitedQueue<float[]> trajectory;
   
   LorenzAttractor(){
-    trajectory=new LimitedQueueVector3(size);
+    trajectory=new LimitedQueue<float[]>(size);
   }
   
   LorenzAttractor(int size){
     this.size=size;
-    trajectory=new LimitedQueueVector3(size);
+    trajectory=new LimitedQueue<float[]>(size);
   }
   
   LorenzAttractor(float[] xyz, float sigma,float beta,float rho,float dt,int size){
@@ -26,7 +26,7 @@ class LorenzAttractor{
     this.rho=rho;
     this.dt=dt;
     this.size=size;
-    trajectory=new LimitedQueueVector3(size);
+    trajectory=new LimitedQueue<float[]>(size);
   }
   
   void run(){
@@ -43,7 +43,7 @@ class LorenzAttractor{
     return xyz;
   }
   
-  LimitedQueueVector3 getTrajectory(){
+  LimitedQueue<float[]> getTrajectory(){
     return trajectory; //<>//
   }
 }

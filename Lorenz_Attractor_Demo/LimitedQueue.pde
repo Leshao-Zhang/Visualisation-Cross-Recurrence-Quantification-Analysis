@@ -1,20 +1,20 @@
-class LimitedQueueVector3 implements Iterable<float[]>{  
+class LimitedQueue<T> implements Iterable<T>{  
   private int size;
-  private float[][] queue;
+  private T[] queue;
   private int start;
   private int end;
   private boolean full;
   
-  LimitedQueueVector3(int size){
+  LimitedQueue(int size){
     this.size=size;
-    queue=new float[size][3];
+    queue=(T[])(new Object[size]);
   }
   
-  Iterator<float[]> iterator(){
-    return new LimitedQueueVector3Iterator(this);
+  Iterator<T> iterator(){
+    return new LimitedQueueIterator<T>(this);
   }
   
-  void add(float[] vector3){
+  void add(T t){
     if(end>=size){
       end=0;
       full=true;
@@ -23,10 +23,10 @@ class LimitedQueueVector3 implements Iterable<float[]>{
       if(start>=size)start=0;
       start++;
     }
-    queue[end++]=vector3;
+    queue[end++]=t;
   }
   
-  float[] get(int index){
+  T get(int index){
     index=start+index;
     if(index>=size)index-=size;
     return queue[index];

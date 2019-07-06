@@ -1,10 +1,10 @@
 import java.util.Iterator;
 
-class LimitedQueueVector3Iterator implements Iterator<float[]>{
-  private LimitedQueueVector3 queue;
+class LimitedQueueIterator<T> implements Iterator<T>{
+  private LimitedQueue<T> queue;
   private int current;
   
-  LimitedQueueVector3Iterator(LimitedQueueVector3 queue){
+  LimitedQueueIterator(LimitedQueue<T> queue){
     this.queue=queue;
   }
   
@@ -13,7 +13,7 @@ class LimitedQueueVector3Iterator implements Iterator<float[]>{
     return false;
   }
   
-  float[] next(){
+  T next(){
     return queue.get(current++);
   }
 }
