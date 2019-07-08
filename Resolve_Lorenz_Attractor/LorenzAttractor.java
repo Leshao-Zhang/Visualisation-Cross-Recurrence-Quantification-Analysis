@@ -1,5 +1,3 @@
-import java.util.LinkedList;
-
 class LorenzAttractor{
   
   private float sigma=10;
@@ -44,6 +42,6 @@ class LorenzAttractor{
   }
   
   LimitedQueue<float[]> getTrajectory(){
-    return trajectory; //<>// //<>// //<>//
+    return trajectory; //<>//
   }
 }

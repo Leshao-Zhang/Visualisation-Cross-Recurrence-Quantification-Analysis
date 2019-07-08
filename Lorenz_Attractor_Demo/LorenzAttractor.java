@@ -1,5 +1,3 @@
-import java.util.LinkedList;
-
 class LorenzAttractor{
   
   private float sigma=10;
