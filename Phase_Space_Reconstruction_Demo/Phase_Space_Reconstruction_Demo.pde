@@ -33,25 +33,13 @@ void lorenzTimeSeriesPlot(){
   translate(30,150);
   X.draw();
   lorenzTimeSeries(lorenz.getTrajectory(),0,50);
-  reconstructLorenz = phaseSpaceReconstruct(lorenz.getTrajectory(), dim, lag);
+  reconstructLorenz = PhaseSpaceReconstruct.go(lorenz.getTrajectory(), dim, lag);
   for(int i=0;i<3;i++){
     translate(0,150);
     x[i].draw();
     lorenzTimeSeries(reconstructLorenz,i,50);
   }
   popMatrix();
-}
-
-LimitedQueue<float[]> phaseSpaceReconstruct(LimitedQueue<float[]> ts, int dim, int lag){
-  LimitedQueue<float[]> reconstruct = new LimitedQueue<float[]>(lorenzSize);
-  for(int t=0;t+dim*lag<ts.size();t++){
-    float[] point=new float[dim];
-    for(int i=0;i<dim;i++){
-      point[i]=ts.get(t+i*lag)[0];      
-    }
-    reconstruct.add(point);
-  }
-  return reconstruct;
 }
 
 void lorenzTimeSeries(LimitedQueue<float[]> ts,int i,int offsetY){
