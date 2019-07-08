@@ -7,9 +7,9 @@ float rx=-2.16,ry=6.33;
 void setup(){
   size(1000,500,P3D);
   co = new CoordinateSystem(50,50,50);
-  X = new CoordinateSystem(400,-100,"t","x(1)");
-  Y = new CoordinateSystem(400,-100,"t","x(2)");
-  Z = new CoordinateSystem(400,-100,"t","x(3)");
+  X = new CoordinateSystem(400,-100,"t","x");
+  Y = new CoordinateSystem(400,-100,"t","y");
+  Z = new CoordinateSystem(400,-100,"t","z");
   lorenz = new LorenzAttractor(3000);
   switcher = new Switcher(850,5,"Trajectory");
 }
