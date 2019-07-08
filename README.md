@@ -6,7 +6,7 @@ Lorenz_Attractor_Demo
 
 ![](Lorenz_Attractor_Point.gif)
 
-Lorenz_Attractor_Demo(Trajctory On)
+Lorenz_Attractor_Demo(Trajectory On)
 
 ![](Lorenz_Attractor_Trajectory.gif)
 
