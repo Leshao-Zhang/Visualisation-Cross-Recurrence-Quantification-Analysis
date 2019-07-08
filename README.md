@@ -13,3 +13,9 @@ Lorenz_Attractor_Demo(Trajectory On)
 Resolve_Lorenz_Attractor
 
 ![](Resolve_Lorenz_Attractor.gif)
+
+Phase_Space_Reconstruction
+
+Embedding Dimension = 3, Time Lag = 5
+
+![](Phase_Space_Reconstruct.gif)
