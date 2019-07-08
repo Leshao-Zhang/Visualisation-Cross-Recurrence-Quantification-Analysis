@@ -1,3 +1,5 @@
+import java.util.Iterator;
+
 class LimitedQueue<T> implements Iterable<T>{  
   private int size;
   private T[] queue;
@@ -5,16 +7,16 @@ class LimitedQueue<T> implements Iterable<T>{
   private int end;
   private boolean full;
   
-  LimitedQueue(int size){
+  public LimitedQueue(int size){
     this.size=size;
     queue=(T[])(new Object[size]);
   }
   
-  Iterator<T> iterator(){
+  public Iterator<T> iterator(){
     return new LimitedQueueIterator<T>(this);
   }
   
-  void add(T t){
+  public void add(T t){
     if(end>=size){
       end=0;
       full=true;
@@ -26,13 +28,13 @@ class LimitedQueue<T> implements Iterable<T>{
     queue[end++]=t;
   }
   
-  T get(int index){
+  public T get(int index){
     index=start+index;
     if(index>=size)index-=size;
     return queue[index];
   }
   
-  int size(){
+  public int size(){
     if(full)return size;
     return end;
   }
