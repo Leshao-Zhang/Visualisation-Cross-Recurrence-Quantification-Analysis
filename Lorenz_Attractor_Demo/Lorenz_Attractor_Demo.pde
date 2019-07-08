@@ -16,15 +16,16 @@ void draw(){
   background(255);
   lorenz.run();
   stroke(0);
-  strokeWeight(3);
   noFill();
   if(trajectory){
     beginShape();
+    strokeWeight(3);
     for(float[] point:lorenz.getTrajectory()){
       vertex(point[0],point[1],point[2]);
     }
     endShape();
   }else{
+    strokeWeight(5);
     float[] point=lorenz.getPoint();
     point(point[0],point[1],point[2]);
   }
@@ -34,6 +35,7 @@ void draw(){
 }
 
 void button(){
+  strokeWeight(3);
   if(trajectory){
     fill(0);
   }else{
