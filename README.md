@@ -1,9 +1,10 @@
 # Visualisation-Cross-Recurrence-Quantification-Analysis
 
+The visualisation is powered by Processing[1].
 
 **Lorenz_Attractor_Demo**
 
-In 1963, Edward Lorenz developed a simplified mathematical model for atmospheric convection.[1] The model is a system of three ordinary differential equations now known as the Lorenz equations:
+In 1963, Edward Lorenz developed a simplified mathematical model for atmospheric convection[2]. The model is a system of three ordinary differential equations now known as the Lorenz equations:
 
 ![](Lorenz_Attractor_Equation.svg)
 
@@ -25,7 +26,7 @@ We can get the three-dimensional time series.
 
 **Phase_Space_Reconstruction**
 
-Assumming that we only have one dimensional time series, we can still reconstruct the movement with time lagged embedding method based on Takens's embedding theory[2].
+Assumming that we only have one dimensional time series, we can still reconstruct the movement with time lagged embedding method based on Takens's embedding theory[3].
 
 Here we use Embedding Dimension = 3, Time Lag = 5. The Embedding Dimension can be found with False Nearest Neighhood function. And Time Lag can be found with Average Mutual Information function.
 
@@ -39,7 +40,7 @@ We can calculate the distance between every two point in the trajectory.
 
 **Recurrent_Plot_Thresholding**
 
-By thresholding the distances, we can produce the Recurrence Plot[3].
+By thresholding the distances, we can produce the Recurrence Plot[4].
 
 ![](Recurrent_Plot_Thresholding.gif)
 
@@ -48,8 +49,10 @@ By thresholding the distances, we can produce the Recurrence Plot[3].
 
 **Reference**
 
-[1] Lorenz, Edward Norton (1963). "Deterministic nonperiodic flow". Journal of the Atmospheric Sciences. 20 (2): 130–141. Bibcode:1963JAtS...20..130L. doi:10.1175/1520-0469(1963)020<0130:DNF>2.0.CO;2.
+[1] Reas, C. and Fry, B. Processing: programming for the media arts (2006). Journal AI & Society, volume 20(4), pages 526-538, Springer
 
-[2] F. Takens (1981). "Detecting strange attractors in turbulence". In D. A. Rand and L.-S. Young (ed.). Dynamical Systems and Turbulence, Lecture Notes in Mathematics, vol. 898. Springer-Verlag. pp. 366–381.
+[2] Lorenz, Edward Norton (1963). "Deterministic nonperiodic flow". Journal of the Atmospheric Sciences. 20 (2): 130–141. Bibcode:1963JAtS...20..130L. doi:10.1175/1520-0469(1963)020<0130:DNF>2.0.CO;2.
 
-[3] J. P. Eckmann, S. O. Kamphorst, D. Ruelle (1987). "Recurrence Plots of Dynamical Systems". Europhysics Letters. 5 (9): 973–977. Bibcode:1987EL......4..973E. doi:10.1209/0295-5075/4/9/004.
+[3] F. Takens (1981). "Detecting strange attractors in turbulence". In D. A. Rand and L.-S. Young (ed.). Dynamical Systems and Turbulence, Lecture Notes in Mathematics, vol. 898. Springer-Verlag. pp. 366–381.
+
+[4] J. P. Eckmann, S. O. Kamphorst, D. Ruelle (1987). "Recurrence Plots of Dynamical Systems". Europhysics Letters. 5 (9): 973–977. Bibcode:1987EL......4..973E. doi:10.1209/0295-5075/4/9/004.
