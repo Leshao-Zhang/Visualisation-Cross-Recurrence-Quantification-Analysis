@@ -98,6 +98,7 @@ void mouseDragged(){
 
 void mouseClicked(){
   switcher.toggle();
+  rm.diagonal(switcher.On());
   if(inc.clicked())rm.setRadius(++radius);
   if(dec.clicked())rm.setRadius(--radius);
 }

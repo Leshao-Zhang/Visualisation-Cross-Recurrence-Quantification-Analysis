@@ -8,6 +8,8 @@ class RecurrentMatrix{
   private int lineMax;
   private float deterministic;
   private HashMap<Integer,Integer> lineHist;
+  private boolean diagonal;
+  private int radius;
   
   RecurrentMatrix(LimitedQueue<float[]> ts,int dim,int lag, int radius){
     LimitedQueue<float[]> reconstruct = PhaseSpaceReconstruct.go(ts, dim, lag);
@@ -17,6 +19,7 @@ class RecurrentMatrix{
         distanceMatrix[p1][p2]=euclideanDistance(reconstruct.get(p1),reconstruct.get(p2));
       }
     }
+    this.radius=radius;
     setRadius(radius);    
   }
   
@@ -32,23 +35,29 @@ class RecurrentMatrix{
     return distanceMatrix;
   }
   
+  public void diagonal(boolean On){
+    diagonal=On;
+    setRadius(radius);
+  }
+  
   public float[][] getRecurrentMatrix(){
     return recurrentMatrix;
   }
   
   public void setRadius(int radius){
+    this.radius=radius;
     float recurrent=0;
     recurrentMatrix = new float[distanceMatrix.length][distanceMatrix[0].length];
     for(int i=0;i<distanceMatrix.length;i++){
       for(int j=0;j<distanceMatrix[0].length;j++){
-        if(distanceMatrix[i][j]<=radius){
-          recurrentMatrix[i][j]=1;
-          recurrent++;
-        }
+        if(diagonal||i!=j)
+          if(distanceMatrix[i][j]<=radius){
+            recurrentMatrix[i][j]=1;
+            recurrent++;
+          }
       }
     }
     recurrentRate=recurrent/(distanceMatrix.length*distanceMatrix[0].length);
-    lineHist = new HashMap<Integer,Integer>();
     lineHistogram();
   }
   
@@ -65,43 +74,50 @@ class RecurrentMatrix{
   }
   
   private void lineHistogram(){
+    lineHist = new HashMap<Integer,Integer>();
     int line=0;
     for(int x=0;x<recurrentMatrix.length;x++){
-      for(int y=0;x+y<recurrentMatrix.length;y++){
-        if(recurrentMatrix[x+y][y]==1){
-          line++;
-        }else{
-          if(!lineHist.containsKey(line)){
-            lineHist.put(line,1);
+      for(int d=0;x+d<recurrentMatrix.length;d++){
+          if(recurrentMatrix[x+d][d]==1){
+            line++;
           }else{
-            lineHist.put(line,lineHist.get(line)+1);
+            increase(lineHist,line);
+            line=0;
           }
-          line=0;
-        }
       }
+      if(line!=0)increase(lineHist,line);
+      line=0;
     }
     line=0;
     for(int y=1;y<recurrentMatrix[0].length;y++){
-      for(int x=0;x+y<recurrentMatrix[0].length;x++){
-        if(recurrentMatrix[x][x+y]==1){
-          line++;
-        }else{
-          Integer old=lineHist.get(line);
-          if(old==null){
-            lineHist.put(line,1);
+      for(int d=0;d+y<recurrentMatrix[0].length;d++){
+          if(recurrentMatrix[d][y+d]==1){
+            line++;
           }else{
-            lineHist.put(line,old+1);
+            increase(lineHist,line);
+            line=0;
           }
-          line=0;
-        }
       }
+      if(line!=0)increase(lineHist,line);
+      line=0;
     }
     float totalLine=0;
+    lineMax=0;
+    float totalPoint=0;
     for(int l:lineHist.keySet()){
       if(l>lineMax)lineMax=l;
       if(l>1)totalLine+=l*lineHist.get(l);
+      totalPoint+=l*lineHist.get(l);
     }
-    deterministic=totalLine/(recurrentMatrix.length*recurrentMatrix[0].length);
+    deterministic=totalLine/totalPoint;
+  }
+  
+  private void increase(HashMap<Integer,Integer> hm, int k){
+    if(!hm.containsKey(k)){
+      hm.put(k,1);
+    }else{
+      hm.put(k,hm.get(k)+1);
+    }
   }
   
 }

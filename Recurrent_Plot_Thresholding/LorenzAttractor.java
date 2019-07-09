@@ -42,6 +42,6 @@ class LorenzAttractor{
   }
   
   public LimitedQueue<float[]> getTrajectory(){
-    return trajectory; //<>//
+    return trajectory; //<>// //<>//
   }
 }
