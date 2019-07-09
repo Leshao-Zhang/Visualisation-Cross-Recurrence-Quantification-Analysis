@@ -34,7 +34,7 @@ Here we use Embedding Dimension = 3, Time Lag = 5. The Embedding Dimension can b
 
 **Recurrent_Plot_Distance**
 
-We can calculate the distance between every two point in the trajectory.
+We can calculate the distance between every two points in the trajectory.
 
 ![](Recurrent_Plot_Distance.gif)
 
