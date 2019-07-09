@@ -7,7 +7,7 @@ In 1963, Edward Lorenz developed a simplified mathematical model for atmospheric
 
 ![](Lorenz_Attractor_Equation.svg)
 
-Using the values ![equation](http://www.sciweavers.org/tex2img.php?eq=\sigma&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=) =10, (http://www.sciweavers.org/tex2img.php?eq=\beta&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=) =8/3 and (http://www.sciweavers.org/tex2img.php?eq=\rho&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=) =28
+Using the values ![equation](http://www.sciweavers.org/tex2img.php?eq=\sigma&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=) =10, ![equation](http://www.sciweavers.org/tex2img.php?eq=\beta&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=) =8/3 and ![equation](http://www.sciweavers.org/tex2img.php?eq=\rho&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=) =28
 
 We got the chaotic motion:
 
