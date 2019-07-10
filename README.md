@@ -36,7 +36,7 @@ We can calculate the distance between every two points in the trajectory.
 
 **Recurrent_Plot_Thresholding**
 
-By thresholding the distances, we can produce the Recurrent Plot[4].
+By thresholding the distances, we can produce the Recurrent Plot[4]. Since we are comparing the motion to itself, the diagonal line ussually should be turned off.
 
 ![](Recurrent_Plot_Thresholding.gif)
 
@@ -48,7 +48,7 @@ Cross Reccurence Quantification Analysis takes two time series and calculate the
 
 **Cross_Recurrent_Plot_Thresholding**
 
-By thresholding the distances, we can produce the Cross Recurrent Plot
+By thresholding the distances, we can produce the Cross Recurrent Plot. Since we are comparing two motions, the diagonal line ussually should be turned on.
 
 ![](Cross_Recurrent_Plot_Thresholding.gif)
 
