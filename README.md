@@ -12,11 +12,7 @@ Using the values ![equation](http://www.sciweavers.org/tex2img.php?eq=\sigma&bc=
 
 We got the chaotic motion:
 
-![](Lorenz_Attractor_Point.gif)
-
-**Lorenz_Attractor_Demo(Trajectory On)**
-
-![](Lorenz_Attractor_Trajectory.gif)
+![](Lorenz_Attractor_Point.gif)![](Lorenz_Attractor_Trajectory.gif)
 
 **Resolve_Lorenz_Attractor**
 
