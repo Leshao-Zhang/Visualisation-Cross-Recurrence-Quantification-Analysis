@@ -44,8 +44,11 @@ By thresholding the distances, we can produce the Recurrence Plot[4].
 
 ![](Recurrent_Plot_Thresholding.gif)
 
+**Cross_Recurrent_Plot_Distance**
 
+Cross Reccurence Quantification Analysis takes two time series and calculate the distance between the two time series after the phase space reconstruction of the two time series.
 
+![](Cross_Recurrent_Plot_Distance.gif)
 
 **Reference**
 
