@@ -40,7 +40,7 @@ We can calculate the distance between every two points in the trajectory.
 
 **Recurrent_Plot_Thresholding**
 
-By thresholding the distances, we can produce the Recurrence Plot[4].
+By thresholding the distances, we can produce the Recurrent Plot[4].
 
 ![](Recurrent_Plot_Thresholding.gif)
 
@@ -49,6 +49,12 @@ By thresholding the distances, we can produce the Recurrence Plot[4].
 Cross Reccurence Quantification Analysis takes two time series and calculate the distance between the two time series after the phase space reconstruction of the two time series.
 
 ![](Cross_Recurrent_Plot_Distance.gif)
+
+**Cross_Recurrent_Plot_Thresholding**
+
+By thresholding the distances, we can produce the Cross Recurrent Plot
+
+![](Cross_Recurrent_Plot_Thresholding.gif)
 
 **Reference**
 
