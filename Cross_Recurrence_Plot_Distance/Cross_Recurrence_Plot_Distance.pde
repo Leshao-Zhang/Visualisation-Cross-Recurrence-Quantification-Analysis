@@ -1,4 +1,4 @@
-CoordinateSystem co,X1,X2,dmc;
+CoordinateSystem co,X,dmc;
 LorenzAttractor lorenz, lorenz2;
 Switcher switcher;
 
@@ -12,12 +12,11 @@ int p1,p2;
 void setup(){
   size(1000,650,P3D);
   co = new CoordinateSystem(50,50,50);
-  X1 = new CoordinateSystem(400,-100,"t","x");
-  X2 = new CoordinateSystem(400,-100,"t","x");
+  X = new CoordinateSystem(400,-100,"t","x");
   dmc = new CoordinateSystem(300,300,250);
   lorenz = new LorenzAttractor(lorenzSize);
   lorenz2 = new LorenzAttractor(lorenzSize);
-  switcher = new Switcher(30,330,"Diagonal Line");
+  switcher = new Switcher(30,180,"Diagonal Line");
   for(int i=0;i<1000;i++){
     lorenz.run(); 
     lorenz2.run();
@@ -46,10 +45,8 @@ void draw(){
 void lorenzTimeSeriesPlot(){
   pushMatrix();
   translate(30,150);
-  X1.draw();
+  X.draw();
   lorenzTimeSeries(lorenz.getTrajectory(),0,50);
-  translate(0,150);
-  X2.draw();
   stroke(0,255,0);
   lorenzTimeSeries(lorenz2.getTrajectory(),0,50);
   popMatrix();
@@ -69,7 +66,7 @@ void lorenzTimeSeries(LimitedQueue<float[]> ts,int i,int offsetY){
 
 void distanceMatrixPlot(){
   pushMatrix();
-  translate(0,650,-100);
+  translate(100,500,-100);
   rotateX(rdx);
   rotateZ(rdy);
   dmc.draw();
