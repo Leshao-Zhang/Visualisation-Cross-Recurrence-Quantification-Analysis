@@ -30,19 +30,19 @@ Here we use Embedding Dimension = 3, Time Lag = 5. The Embedding Dimension can b
 
 **Recurrent_Plot_Distance**
 
-We can calculate the distance between every two points in the trajectory.
+We can calculate the distance between every two points in the trajectory. 
 
 ![](Recurrent_Plot_Distance.gif)
 
 **Recurrent_Plot_Thresholding**
 
-By thresholding the distances, we can produce the Recurrent Plot[4]. Since we are comparing the motion to itself, the diagonal line ussually should be turned off.
+By thresholding the distances, we can produce the Recurrent Plot[4,5]. Since we are comparing the motion to itself, the diagonal line ussually should be turned off.
 
 ![](Recurrent_Plot_Thresholding.gif)
 
 **Cross_Recurrent_Plot_Distance**
 
-Cross Reccurence Quantification Analysis takes two time series and calculate the distance between the two time series after the phase space reconstruction of the two time series.
+Cross Recurrence Quantification Analysis takes two time series and calculate the distance between the two time series after the phase space reconstruction of the two time series. It produces Recurrence Rate (REC), Deterministic Rate (DET) and Max Line Length (LMAX), etc. as a quantification measurement of the nonlineaer behaviour.
 
 ![](Cross_Recurrent_Plot_Distance.gif)
 
@@ -61,3 +61,5 @@ By thresholding the distances, we can produce the Cross Recurrent Plot. Since we
 [3] F. Takens (1981). "Detecting strange attractors in turbulence". In D. A. Rand and L.-S. Young (ed.). Dynamical Systems and Turbulence, Lecture Notes in Mathematics, vol. 898. Springer-Verlag. pp. 366–381.
 
 [4] J. P. Eckmann, S. O. Kamphorst, D. Ruelle (1987). "Recurrence Plots of Dynamical Systems". Europhysics Letters. 5 (9): 973–977. Bibcode:1987EL......4..973E. doi:10.1209/0295-5075/4/9/004.
+
+[5] Marwan, N., Romano, M. C., Thiel, M., & Kurths, J. (2007). Recurrence plots for the analysis of complex systems. Physics reports, 438(5-6), 237-329.
