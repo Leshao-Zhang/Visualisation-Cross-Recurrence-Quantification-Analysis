@@ -8,28 +8,44 @@ The RQA data should be put in LimitedQueue<Float>. So the first step is to put y
 
 ~~~~
 /**LorenzAttractor**/
+
 int size=1000;
 float sigma=10f;
 float beta=8/3f;
 float rho=28f;
 float[] xyz = {1f,1f,1f};
 float dt=0.01f;
+
 LorenzAttractor lorenz = new LorenzAttractor();
 LorenzAttractor lorenz2 = new LorenzAttractor(size);
 LorenzAttractor lorenz3 = new LorenzAttractor(xyz,sigma,beta,rho,dt,size);
+
+/**
+  * Initiate lorenzAttractor, 
+  * lorenz contains the first 1000 points, 
+  * lorenz2 contains the 1001-2000 points, 
+  * lorenz3 contains the 2001-3000 points.
+ **/
+
 for(int i=0;i<size;i++){
     lorenz.run();
     lorenz2.run();lorenz2.run();
     lorenz3.run();lorenz3.run();lorenz3.run();
-}//Initiate lorenzAttractor, lorenz contains the first 1000 points, lorenz2 contains the 1001-2000 points, lorenz3 contains the 2001-3000 points.
+}
+
 lorenz.getPoint();//float[3];
 lorenz.getTrajectory();//LimitedQueue<float[]>
 
 /**Recurrence Quantification Analysis**/
-int dim,lag,radius;
-boolean on;
+
+int dim=3,lag=5,radius=3;
+boolean on=false;
+
 LimitedQueue<Float> timeSeries = new LimitedQueue<Float>(size);//Initiate data
-for(float[] point:lorenz.getTrajectory())timeSeries.add(point[0]); //Put your data to the timeSeries.
+
+for(float[] point:lorenz.getTrajectory())
+    timeSeries.add(point[0]); //Put the X axis of Lorenz Attractor to the timeSeries.
+
 RecurrentMatrix rm = new RecurrentMatrix(timeSeries, dim, lag, radius);
 rm.getDistanceMatirx();//float[][]
 rm.getRecurrentMatirx();//float[][]
@@ -40,10 +56,17 @@ rm.setRadius(radius);
 rm.diagonal(on);
 
 /**Cross Recurrence Quantification Analysis**/
+
 LimitedQueue<Float> timeSeries2 = new LimitedQueue<Float>(size);
-for(float[] point:lorenz2.getTrajectory())timeSeries2.add(point[0]);
+
+for(float[] point:lorenz2.getTrajectory())
+    timeSeries2.add(point[0]);
+
 LimitedQueue<Float> timeSeries3 = new LimitedQueue<Float>(size);
-for(float[] point:lorenz3.getTrajectory())timeSeries3.add(point[0]);
+
+for(float[] point:lorenz3.getTrajectory())
+    timeSeries3.add(point[0]);
+
 RecurrentMatrix rm = new RecurrentMatrix(timeSeries2, timeSeries3, dim, lag, radius);
 ~~~~
 
