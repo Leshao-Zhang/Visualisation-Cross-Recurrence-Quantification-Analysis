@@ -2,6 +2,51 @@
 
 The visualisation is powered by Processing[1].
 
+The Recurrence Quantification Analysis(RQA) algorithm is in Recurrence Quantification Analysis Core Folder written in Java. 
+
+The RQA data should be put in LimitedQueue<Float>. So the first step is to put your time series data to LimitedQueue<Float>.
+
+~~~~
+/**LorenzAttractor**/
+int size=1000;
+float sigma=10f;
+float beta=8/3f;
+float rho=28f;
+float[] xyz = {1f,1f,1f};
+float dt=0.01f;
+LorenzAttractor lorenz = new LorenzAttractor();
+LorenzAttractor lorenz2 = new LorenzAttractor(size);
+LorenzAttractor lorenz3 = new LorenzAttractor(xyz,sigma,beta,rho,dt,size);
+for(int i=0;i<size;i++){
+    lorenz.run();
+    lorenz2.run();lorenz2.run();
+    lorenz3.run();lorenz3.run();lorenz3.run();
+}//Initiate lorenzAttractor, lorenz contains the first 1000 points, lorenz2 contains the 1001-2000 points, lorenz3 contains the 2001-3000 points.
+lorenz.getPoint();//float[3];
+lorenz.getTrajectory();//LimitedQueue<float[]>
+
+/**Recurrence Quantification Analysis**/
+int dim,lag,radius;
+boolean on;
+LimitedQueue<Float> timeSeries = new LimitedQueue<Float>(size);//Initiate data
+for(float[] point:lorenz.getTrajectory())timeSeries.add(point[0]); //Put your data to the timeSeries.
+RecurrentMatrix rm = new RecurrentMatrix(timeSeries, dim, lag, radius);
+rm.getDistanceMatirx();//float[][]
+rm.getRecurrentMatirx();//float[][]
+rm.getRecurrentRate();//float
+rm.getLMAX();//int
+rm.getDeterminit();//float
+rm.setRadius(radius);
+rm.diagonal(on);
+
+/**Cross Recurrence Quantification Analysis**/
+LimitedQueue<Float> timeSeries2 = new LimitedQueue<Float>(size);
+for(float[] point:lorenz2.getTrajectory())timeSeries2.add(point[0]);
+LimitedQueue<Float> timeSeries3 = new LimitedQueue<Float>(size);
+for(float[] point:lorenz3.getTrajectory())timeSeries3.add(point[0]);
+RecurrentMatrix rm = new RecurrentMatrix(timeSeries2, timeSeries3, dim, lag, radius);
+~~~~
+
 **Lorenz_Attractor_Demo**
 
 In 1963, Edward Lorenz developed a simplified mathematical model for atmospheric convection[2]. The model is a system of three ordinary differential equations now known as the Lorenz equations:

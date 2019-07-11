@@ -22,6 +22,10 @@ class RecurrentMatrix{
     this.radius=radius;
     setRadius(radius);    
   }
+
+  RecurrentMatrix(LimitedQueue<Float> ts,int dim,int lag, int radius){
+    this(ts,ts,dim,lag,radius);
+  }
   
   private float euclideanDistance(float[] p1,float[] p2){
     double sum=0;
