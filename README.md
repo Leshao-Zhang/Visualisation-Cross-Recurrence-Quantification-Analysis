@@ -2,7 +2,7 @@
 
 The visualisation is powered by Processing[1].
 
-##Lorenz_Attractor_Demo
+## Lorenz_Attractor_Demo
 
 In 1963, Edward Lorenz developed a simplified mathematical model for atmospheric convection[2]. The model is a system of three ordinary differential equations now known as the Lorenz equations:
 
@@ -14,13 +14,13 @@ We got the chaotic motion:
 
 ![](Lorenz_Attractor_Point.gif)![](Lorenz_Attractor_Trajectory.gif)
 
-##Resolve_Lorenz_Attractor
+## Resolve_Lorenz_Attractor
 
 We can get the three-dimensional time series.
 
 ![](Resolve_Lorenz_Attractor.gif)
 
-##Phase_Space_Reconstruction
+## Phase_Space_Reconstruction
 
 Assumming that we only have one dimensional time series, we can still reconstruct the movement with time lagged embedding method based on Takens's embedding theory[3].
 
@@ -28,31 +28,31 @@ Here we use Embedding Dimension = 3, Time Lag = 5. The Embedding Dimension can b
 
 ![](Phase_Space_Reconstruct.gif)
 
-##Recurrent_Plot_Distance
+## Recurrent_Plot_Distance
 
 We can calculate the distance between every two points in the trajectory. 
 
 ![](Recurrent_Plot_Distance.gif)
 
-##Recurrent_Plot_Thresholding
+## Recurrent_Plot_Thresholding
 
 By thresholding the distances, we can produce the Recurrent Plot[4,5]. Since we are comparing the motion to itself, the diagonal line ussually should be turned off.
 
 ![](Recurrent_Plot_Thresholding.gif)
 
-##Cross_Recurrent_Plot_Distance
+## Cross_Recurrent_Plot_Distance
 
 Cross Recurrence Quantification Analysis takes two time series and calculate the distance between the two time series after the phase space reconstruction of the two time series. It produces Recurrence Rate (REC), Deterministic Rate (DET) and Max Line Length (LMAX), etc. as quantification measurements of the nonlineaer behaviour.
 
 ![](Cross_Recurrent_Plot_Distance.gif)
 
-##Cross_Recurrent_Plot_Thresholding
+## Cross_Recurrent_Plot_Thresholding
 
 By thresholding the distances, we can produce the Cross Recurrent Plot. Since we are comparing two motions, the diagonal line ussually should be turned on.
 
 ![](Cross_Recurrent_Plot_Thresholding.gif)
 
-##Reference
+## Reference
 
 [1] Reas, C. and Fry, B. Processing: programming for the media arts (2006). Journal AI & Society, volume 20(4), pages 526-538, Springer
 
@@ -66,7 +66,7 @@ By thresholding the distances, we can produce the Cross Recurrent Plot. Since we
 
 <br>
 
-##Usage:
+## Usage:
 
 Dowload Processing from https://processing.org/download/
 
