@@ -87,7 +87,7 @@ Program List:
 
 The Recurrence Quantification Analysis(RQA) algorithm is in the Recurrence Quantification Analysis Core folder written in Java. It can be used seperately.
 
-The RQA data should be put in LimitedQueue<Float>. So the first step is to put your time series data to LimitedQueue<Float>.
+The RQA data should be put in ``LimitedQueue<Float>``. So the first step is to put your time series data to ``LimitedQueue<Float>``.
 
 ~~~~
 /**LorenzAttractor**/
