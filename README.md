@@ -42,7 +42,7 @@ By thresholding the distances, we can produce the Recurrent Plot[4,5]. Since we 
 
 **Cross_Recurrent_Plot_Distance**
 
-Cross Recurrence Quantification Analysis takes two time series and calculate the distance between the two time series after the phase space reconstruction of the two time series. It produces Recurrence Rate (REC), Deterministic Rate (DET) and Max Line Length (LMAX), etc. as a quantification measurement of the nonlineaer behaviour.
+Cross Recurrence Quantification Analysis takes two time series and calculate the distance between the two time series after the phase space reconstruction of the two time series. It produces Recurrence Rate (REC), Deterministic Rate (DET) and Max Line Length (LMAX), etc. as quantification measurements of the nonlineaer behaviour.
 
 ![](Cross_Recurrent_Plot_Distance.gif)
 
