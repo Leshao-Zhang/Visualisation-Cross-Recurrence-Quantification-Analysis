@@ -13,7 +13,7 @@ class RecurrentMatrix{
   RecurrentMatrix(LimitedQueue<Float> ts1,LimitedQueue<Float> ts2,int dim,int lag, int radius){
     LimitedQueue<float[]> reconstruct = PhaseSpaceReconstruct.go(ts1, dim, lag);
     LimitedQueue<float[]> reconstruct2 = PhaseSpaceReconstruct.go(ts2, dim, lag);
-    distanceMatrix = new float[reconstruct.size()][reconstruct.size()];
+    distanceMatrix = new float[reconstruct.size()][reconstruct2.size()];
     for(int p1=0;p1<distanceMatrix.length;p1++){
       for(int p2=0;p2<distanceMatrix[0].length;p2++){
         distanceMatrix[p1][p2]=euclideanDistance(reconstruct.get(p1),reconstruct2.get(p2));
