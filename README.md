@@ -36,7 +36,7 @@ We can calculate the distance between every two points in the trajectory.
 
 ## Recurrent_Plot_Thresholding
 
-By thresholding the distances, we can produce the Recurrent Plot[4,5]. Since we are comparing the motion to itself, the diagonal line ussually should be turned off.
+By thresholding the distances, we can produce the Recurrent Plot[4,5,6]. Since we are comparing the motion to itself, the diagonal line ussually should be turned off.
 
 ![](Recurrent_Plot_Thresholding.gif)
 
@@ -62,7 +62,9 @@ By thresholding the distances, we can produce the Cross Recurrent Plot. Since we
 
 [4] J. P. Eckmann, S. O. Kamphorst, D. Ruelle (1987). "Recurrence Plots of Dynamical Systems". Europhysics Letters. 5 (9): 973–977. Bibcode:1987EL......4..973E. doi:10.1209/0295-5075/4/9/004.
 
-[5] Marwan, N., Romano, M. C., Thiel, M., & Kurths, J. (2007). Recurrence plots for the analysis of complex systems. Physics reports, 438(5-6), 237-329.
+[5] Webber Jr, C. L., & Zbilut, J. P. (2005). Recurrence quantification analysis of nonlinear dynamical systems. Tutorials in contemporary nonlinear methods for the behavioral sciences, 94, 26-94.
+
+[6] Marwan, N., Romano, M. C., Thiel, M., & Kurths, J. (2007). Recurrence plots for the analysis of complex systems. Physics reports, 438(5-6), 237-329.
 
 <br>
 
